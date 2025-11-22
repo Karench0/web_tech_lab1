@@ -110,7 +110,11 @@ li {
     margin-top: 10px;
 }
 
-#popular_food th,
+#popular_food th{
+    border: 1px solid #cccccc;
+    padding: 10px 12px;
+    text-align: center;
+}
 #popular_food td {
     border: 1px solid #cccccc;
     padding: 10px 12px;
@@ -197,3 +201,4 @@ footer a {
         font-size: 16px;
     }
 }
+
