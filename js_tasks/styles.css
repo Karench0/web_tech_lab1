@@ -1,0 +1,140 @@
+
+* {
+    box-sizing: border-box; 
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f9; 
+    color: #333; 
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background: linear-gradient(135deg, #1467ff, #82a1ffd2); 
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    font-size: 24px;
+    margin-bottom: 5px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+header h3 {
+    font-size: 16px;
+    font-weight: normal;
+    opacity: 0.9;
+}
+
+
+main {
+    max-width: 800px;
+    margin: 40px auto; 
+    padding: 0 20px;
+    width: 100%;
+}
+
+a{
+    margin: 10px;
+}
+
+h1.section-title {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #444;
+    font-size: 28px;
+}
+
+
+
+
+.lab-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px; 
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); 
+    transition: all 0.3s ease;
+    border: 5px solid #1467ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px; 
+}
+
+
+.lab-card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    background-color: #fffbf0; 
+    color: #1467ff;
+}
+
+
+.lab-card.disabled {
+    background-color: #e0e0e0;
+    color: #999;
+    border-color: #bbb;
+    pointer-events: none; 
+    box-shadow: none;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.stylish-input {
+    padding: 12px 16px;
+    font-size: 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    outline: none;
+    transition: all 0.3s ease;
+    width: 250px;
+    color: #333;
+}
+
+.stylish-input::placeholder {
+    color: #aaa;
+}
+
+.stylish-input:focus {
+    border-color: #1467ff; 
+    box-shadow: 0 0 0 4px rgba(108, 92, 231, 0.1);
+}
+
+.action-btn {
+    padding: 12px 24px;
+    background-color: #1467ff;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s;
+}
+
+.action-btn:hover {
+    background-color: #1467ff;
+}
+
+.action-btn:active {
+    transform: scale(0.98); 
+}
+#answBtn{
+    margin-top: 20px;
+}
