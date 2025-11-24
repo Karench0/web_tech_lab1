@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="Math_game.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Math Game</h1>
+        <h3>Test your arithmetic skills</h3>
+        <!-- Кнопка возврата в навигацию -->
+        <nav>
+            <a href="../js_tasks.html" class="nav-link">Back to Menu</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="game-card">
+            <!-- Счетчики -->
+            <div class="score-board">
+                <span class="score-item correct">Correct: <span id="correct-count">0</span></span>
+                <span class="score-item incorrect">Incorrect: <span id="incorrect-count">0</span></span>
+            </div>
+
+            <!-- Игровая область -->
+            <div id="game-area">
+                <div id="level" class="info-text">Level: beginner</div>            
+                <div id="question" class="math-problem">Loading...</div>
+        
+                <form id="my-form">
+                    <input id="answer" type="text" placeholder="Enter answer" autocomplete="off" required>
+                    <br>
+                    <button id="ansButton" type="submit">Submit Answer</button>
+                </form>
+                
+                <div id="result-message" class="result-message"></div>
+            </div>
+
+            <!-- Экран перехода между уровнями (скрыт по умолчанию) -->
+            <div id="level-transition" class="hidden">
+                <h2 id="transition-title" style="margin-bottom: 15px;">Level Complete!</h2>
+                <p id="transition-msg" class="info-text" style="margin-bottom: 20px;"></p>
+                
+                <div class="button-group">
+                    <!-- Используем стиль action-btn для системных кнопок -->
+                    <button id="nextLevelBtn" class="action-btn">Next Level</button>
+                    <button id="restartBtn" class="action-btn secondary">Restart Game</button>
+                    <button id="exitBtn" class="action-btn secondary">Exit</button>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

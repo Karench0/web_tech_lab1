@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caesar's cipher</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="Caesar's_cipher.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Caesar's cipher</h1>
+    </header>
+    <main>
+        <div class="container" style="display: flex; flex-direction: column;"> 
+            <h2>Введите слово</h2>
+            <input type="text" id="myInputWord" class="stylish-input" placeholder="Введите слово...">
+            <h2>Введите шаг шифрования</h2>
+            <input type="number" id="Shift" class="stylish-input" placeholder="Введите шаг...">
+        </div>
+        <br>
+        <div>
+            <h1>Ответ:</h1>
+            <h3 data-shift>По умолчанию шаг = 1. Сейчас: </h3>
+            <p data-answer></p>
+            <button id="cipher" class="action-btn">Шифровать</button>
+            <button id="decipher" class="action-btn">Расшифровать</button>
+        </div>
+        
+        <br>
+        <a href="../js_tasks.html" class="lab-card">
+                Вернуться на страницу
+        </a>
+    </main>
+</body>
+</html>

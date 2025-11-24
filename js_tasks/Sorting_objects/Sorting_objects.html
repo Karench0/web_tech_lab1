@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting objects</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="Sorting_objects.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Sorting objects</h1>
+    </header>
+    <main>
+        <div style = "display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px">
+            <form id="my-form">
+                <label for="age">Возраст: </label>
+                <input type="number" id="age">
+                <label for="name">Имя:</label>
+                <input type="text" id="name">
+                <button type="submit">Готово</button>
+            </form>
+            <br>
+            <table>
+                <thead>
+                    <tr>
+                        <th data-id>id</th>
+                        <th>name</th>
+                        <th data-age>age</th>
+                    </tr>
+                </thead>
+                <tbody id="table_body">
+
+                </tbody>
+            </table>
+        </div>
+        <br>
+        <a href="../js_tasks.html" class="lab-card">
+                Вернуться на страницу
+        </a>
+    </main>
+</body>
+</html>

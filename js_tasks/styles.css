@@ -54,8 +54,14 @@ h1.section-title {
     font-size: 28px;
 }
 
+table, td, th {
+  border-collapse: collapse;
+  border: 3px solid #245488;
+}
 
-
+td, th{
+    padding: 5px 25px;
+}
 
 .lab-card {
     background-color: white;
@@ -137,4 +143,79 @@ h1.section-title {
 }
 #answBtn{
     margin-top: 20px;
+}
+[data-answer]{
+    font-size: 30px;
+    font-weight: bold;
+}
+.game-card {
+    display:block;
+    position: relative;
+    margin: 0 auto;
+    background-color: white;
+    padding: 40px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 300px;
+}
+
+/* Заголовок */
+.game-card h1 {
+    margin: 0 0 15px 0;
+    font-size: 28px;
+    color: #000;
+}
+
+/* Текст уровня и таймера */
+.info-text {
+    font-size: 18px;
+    color: #333;
+    margin: 5px 0;
+}
+
+/* Математический пример */
+.math-problem {
+    font-size: 24px;
+    margin: 25px 0;
+    font-weight: 500;
+}
+
+/* Поле ввода */
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Чтобы padding не увеличивал ширину */
+    font-size: 16px;
+    color: #555;
+}
+
+input[type="text"]::placeholder {
+    color: #888;
+}
+
+/* Зеленая кнопка */
+button {
+    background-color: #28a745; /* Цвет как на картинке */
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+/* Текст "Correct!" */
+.result-message {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #000;
 }

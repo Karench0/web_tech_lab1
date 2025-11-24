@@ -15,12 +15,10 @@ answBtn.addEventListener('click', () => {
         answer.textContent = "Введите оба числа!";
         return;
     }
-    answer.textContent = Math.pow(num, power); 
-});
-
-answBtn.addEventListener('click', function() {
+    answer.textContent = String(pow(num, power));
     inputFieldNum.value = '';
-    inputFieldPow.value = '';
+    inputFieldPow.value = ''; 
 });
-
-
+function pow(x, n){
+    return x**n;
+}
