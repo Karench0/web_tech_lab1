@@ -126,13 +126,134 @@ nav a:hover {
     font-size: 16px;
     transition: background-color 0.3s;
 }
-a[href="../index.html"]{
-    position: absolute;
-    left: 30px;
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column;
+}
+
+.container h1{
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+form{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 50px;
+
+}
+.column {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+h2 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    font-weight: normal;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="time"],
+select,
+textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc; /* Серый бордер как на макете */
+    border-radius: 3px;
+    box-sizing: border-box; /* Чтобы padding не увеличивал ширину */
+    font-family: inherit;
+}
+
+textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+/* Стили для чекбокса (в одну строку) */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.checkbox-group input {
+    margin-right: 10px;
+    width: auto; /* Отменяем 100% ширину */
+}
+
+.checkbox-group label {
+    margin-bottom: 0;
+    font-weight: bold;
+}
+
+/* Стили для радиокнопок */
+.radio-group {
+    margin-bottom: 15px;
+}
+
+.radio-item {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.radio-item input {
+    width: auto;
+    margin-right: 10px;
+}
+
+.radio-item label {
+    margin-bottom: 0;
+    font-weight: normal;
+}
+
+/* Подписи под полями */
+.hint {
+    display: block;
+    font-size: 0.8rem;
+    color: #333;
+    margin-top: 5px;
+    font-style: italic;
+}
+
+/* Блок кнопок */
+.buttons {
+    display: flex;
+    gap: 10px;
     margin-top: 10px;
-    text-decoration: none;
-    color: #ffcc80;
-    transition: color 0.3s ease;
+}
+
+button {
+    padding: 8px 20px;
+    background-color: white;
+    border: 1px solid #333;
+    cursor: pointer;
+    font-size: 0.9rem;
+    border-radius: 2px;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #f0f0f0;
 }
 
 footer {
@@ -141,18 +262,40 @@ footer {
     text-align: center;
     margin-top: 40px;
     padding: 20px;
+    
+    /* Включаем Flexbox */
+    display: flex;
+    flex-direction: column; /* Элементы встанут друг под другом */
+    align-items: center;    /* Выравнивание по центру */
+    gap: 15px;              /* Отступы между элементами футера */
+    position: relative;     /* На всякий случай, для контекста */
+}
+
+/* Стилизуем ссылку "вернуться на главную" */
+/* Обратите внимание: убираем absolute и left */
+a[href="../index.html"] {
+    text-decoration: none;
+    color: #ffcc80;
+    transition: color 0.3s ease;
+    
+    /* Если нужно, чтобы она выглядела как кнопка или была заметнее */
+    display: inline-block; 
+    margin-bottom: 10px; /* Отступ снизу, если не используется gap */
 }
 
 footer p {
-    margin-bottom: 5px;
+    margin: 0; /* Убираем лишние отступы, так как есть gap у родителя */
     font-size: 16px;
-    color:#e0e0e0;
+    color: #e0e0e0;
 }
 
 footer a {
     font-weight: 600;
+    color: inherit; /* Чтобы цвет наследовался или задавался отдельно */
+    text-decoration: none;
 }
-footer a:hover{
+
+footer a:hover {
     color: #ffecb3;
 }
 @media (max-width: 800px) {
@@ -162,6 +305,9 @@ footer a:hover{
 
     nav {
         justify-content: space-between;
+    }
+    form{
+        flex-direction: column;
     }
 }
 
@@ -181,5 +327,24 @@ footer a:hover{
 
     nav a {
         font-size: 20px;
+    }
+    form{
+        flex-direction: column;
+    }
+}
+@media (min-width: 768px) {
+    footer {
+        flex-direction: row;      /* Элементы в строку */
+        justify-content: center;  /* Центрируем содержимое */
+        position: relative;       /* Важно для абсолютного позиционирования детей */
+    }
+
+    /* Возвращаем ссылку влево ТОЛЬКО на больших экранах */
+    a[href="../index.html"] {
+        position: absolute;
+        left: 30px;
+        top: 50%;            /* Центрируем по вертикали */
+        transform: translateY(-50%); /* Точное центрирование */
+        margin: 0;
     }
 }
