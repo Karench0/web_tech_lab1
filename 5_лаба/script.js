@@ -293,75 +293,148 @@ function render() {
     dessertsRender();
 };
 
-function soupRender(){
+function soupRender(filterType = null) {
     const soup_block = document.querySelector("#soup_block");
-    for (x of soups.sort((a, b) => a.name > b.name ? 1 : -1)){
+    soup_block.innerHTML = ''; // Очищаем блок перед отрисовкой!
+
+    // Фильтруем массив, если передан тип
+    let currentSoups = soups;
+    if (filterType && filterType !== 'all') {
+        currentSoups = soups.filter(item => item.type === filterType);
+    }
+
+    // Сортируем и отрисовываем
+    for (let x of currentSoups.sort((a, b) => a.name > b.name ? 1 : -1)) {
         soup_block.innerHTML += 
-       `<div class="dish-card">
+        `<div class="dish-card" data-kind="${x.type}">
             <img src="${x.img}" alt="Суп" height="450px">
             <p class="price">${x.price} ₽</p>
             <p class="name">${x.name}</p>
             <p class="weight">${x.weight} г</p>
             <button id="${x.id}">Добавить</button>
-        </div>`
-    };
-};
+        </div>`;
+    }
+}
 
-function dishRender(){
+function dishRender(filterType = null) {
     const dish_block = document.querySelector("#dish_block");
-    for (x of dishes.sort((a, b) => a.name > b.name ? 1 : -1)){
+    dish_block.innerHTML = '';
+
+    let currentDishes = dishes;
+    if (filterType && filterType !== 'all') {
+        currentDishes = dishes.filter(item => item.type === filterType);
+    }
+
+    for (let x of currentDishes.sort((a, b) => a.name > b.name ? 1 : -1)) {
         dish_block.innerHTML += 
-       `<div class="dish-card">
-            <img src="${x.img}" alt="${x.alt}"  height="450px">
+        `<div class="dish-card" data-kind="${x.type}">
+            <img src="${x.img}" alt="${x.alt}" height="450px">
             <p class="price">${x.price} ₽</p>
             <p class="name">${x.name}</p>
             <p class="weight">${x.weight} г</p>
             <button id="${x.id}">Добавить</button>
-        </div>`
-    };
-};
+        </div>`;
+    }
+}
 
-function drinkRender(){
+function drinkRender(filterType = null) {
     const drink_block = document.querySelector("#drink_block");
-    for (x of drinks.sort((a, b) => a.name > b.name ? 1 : -1)){
+    drink_block.innerHTML = '';
+
+    let currentDrinks = drinks;
+    if (filterType && filterType !== 'all') {
+        currentDrinks = drinks.filter(item => item.type === filterType);
+    }
+
+    for (let x of currentDrinks.sort((a, b) => a.name > b.name ? 1 : -1)) {
         drink_block.innerHTML += 
-       `<div class="dish-card">
+        `<div class="dish-card" data-kind="${x.type}">
             <img src="${x.img}" alt="${x.alt}" height="450px">
             <p class="price">${x.price} ₽</p>
             <p class="name">${x.name}</p>
             <p class="weight">${x.weight} л</p>
             <button id="${x.id}">Добавить</button>
-        </div>`
-    };
-};
+        </div>`;
+    }
+}
 
-function saladRender(){
+function saladRender(filterType = null) {
     const salad_block = document.querySelector("#salad_block");
-    for (x of salads.sort((a, b) => a.name > b.name ? 1 : -1)){
-        salad_block.innerHTML += 
-       `<div class="dish-card">
-            <img src="${x.img}" alt="${x.alt}" height="450px">
-            <p class="price">${x.price} ₽</p>
-            <p class="name">${x.name}</p>
-            <p class="weight">${x.weight} л</p>
-            <button id="${x.id}">Добавить</button>
-        </div>`
-    };
-};
+    salad_block.innerHTML = '';
 
-function dessertsRender(){
-    const dessert_block = document.querySelector("#dessert_block");
-    for (x of desserts.sort((a, b) => a.name > b.name ? 1 : -1)){
-        dessert_block.innerHTML += 
-       `<div class="dish-card">
+    let currentSalads = salads;
+    if (filterType && filterType !== 'all') {
+        currentSalads = salads.filter(item => item.type === filterType);
+    }
+
+    for (let x of currentSalads.sort((a, b) => a.name > b.name ? 1 : -1)) {
+        salad_block.innerHTML += 
+        `<div class="dish-card" data-kind="${x.type}">
             <img src="${x.img}" alt="${x.alt}" height="450px">
             <p class="price">${x.price} ₽</p>
             <p class="name">${x.name}</p>
             <p class="weight">${x.weight} л</p>
             <button id="${x.id}">Добавить</button>
-        </div>`
-    };
-};
+        </div>`;
+    }
+}
+
+function dessertsRender(filterType = null) {
+    const dessert_block = document.querySelector("#dessert_block");
+    dessert_block.innerHTML = '';
+
+    let currentDesserts = desserts;
+    if (filterType && filterType !== 'all') {
+        currentDesserts = desserts.filter(item => item.type === filterType);
+    }
+
+    for (let x of currentDesserts.sort((a, b) => a.name > b.name ? 1 : -1)) {
+        dessert_block.innerHTML += 
+        `<div class="dish-card" data-kind="${x.type}">
+            <img src="${x.img}" alt="${x.alt}" height="450px">
+            <p class="price">${x.price} ₽</p>
+            <p class="name">${x.name}</p>
+            <p class="weight">${x.weight} л</p>
+            <button id="${x.id}">Добавить</button>
+        </div>`;
+    }
+}
+
+// === ЛОГИКА ФИЛЬТРАЦИИ ===
+// Находим все кнопки фильтров
+const filterButtons = document.querySelectorAll('.filter-btn');
+
+// Добавляем обработчик событий на каждую кнопку
+filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        // Получаем категорию (суп, салат и т.д.) и тип фильтра (рыба, мясо) из data-атрибутов
+        const category = button.dataset.category;
+        const kind = button.dataset.kind;
+        
+        document.querySelectorAll(`.filter-btn[data-category="${category}"]`).forEach(btn => btn.classList.remove('active'));
+        // Добавляем класс активной кнопке
+        button.classList.add('active');
+
+        // Вызываем соответствующий рендер в зависимости от категории
+        switch(category) {
+            case 'soup':
+                soupRender(kind);
+                break;
+            case 'dish':
+                dishRender(kind);
+                break;
+            case 'salad':
+                saladRender(kind);
+                break;
+            case 'drink':
+                drinkRender(kind);
+                break;
+            case 'dessert':
+                dessertsRender(kind);
+                break;
+        }
+    });
+});
 
 function sortArray(array){
     const arr = []
