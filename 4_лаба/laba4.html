@@ -48,16 +48,37 @@
                 <div class="form-group">
                     <label for="soup">Суп</label>
                     <p id="select_soup">Блюдо не выбрано</p>
+                    <!-- Скрытое поле для отправки -->
+                    <input type="hidden" name="soup" id="soup_input"> 
                 </div>
 
                 <div class="form-group">
                     <label for="main_dish">Главное блюдо</label>
                     <p id="select_dish">Блюдо не выбрано</p>
+                    <input type="hidden" name="main_dish" id="dish_input">
+                </div>
+
+                <div class="form-group">
+                    <label for="salad">Салаты</label>
+                    <p id="select_salad">Блюдо не выбрано</p>
+                    <input type="hidden" name="salad" id="salad_input">
                 </div>
 
                 <div class="form-group">
                     <label for="drink">Напиток</label>
                     <p id="select_drink">Блюдо не выбрано</p>
+                    <input type="hidden" name="drink" id="drink_input">
+                </div>
+
+                <div class="form-group">
+                    <label for="dessert">Десерты</label>
+                    <p id="select_desserts">Блюдо не выбрано</p>
+                    <input type="hidden" name="dessert" id="dessert_input">
+                </div>
+                
+                <!-- Блок итоговой стоимости -->
+                <div class="form-group" id="total_block" style="margin-top: 20px; font-weight: bold; font-size: 1.2em;">
+                    <p>Итоговая стоимость: <span id="total_price">0</span> ₽</p>
                 </div>
 
                 <div class="form-group">
