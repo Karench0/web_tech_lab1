@@ -608,21 +608,18 @@ setupCategoryListener("#salad_block", "salad", salads, saladSelected, saladInput
 setupCategoryListener("#dessert_block", "dessert", desserts, dessertSelected, dessertInput);
 
 resetButton.addEventListener("click", () => {
-    // 1. Сбрасываем текст
     soupSelected.textContent = "Блюдо не выбрано";
     dishSelected.textContent = "Блюдо не выбрано";
     drinkSelected.textContent = "Блюдо не выбрано";
     saladSelected.textContent = "Блюдо не выбрано";
     dessertSelected.textContent = "Блюдо не выбрано";
 
-    // 2. Сбрасываем скрытые инпуты
     soupInput.value = "";
     dishInput.value = "";
     drinkInput.value = "";
     saladInput.value = "";
     dessertInput.value = "";
 
-    // 3. Сбрасываем объект заказа
     currentOrder = {
         soup: null,
         dish: null,
@@ -631,7 +628,6 @@ resetButton.addEventListener("click", () => {
         dessert: null
     };
 
-    // 4. Обнуляем цену
     recalculateTotal();
 });
 
