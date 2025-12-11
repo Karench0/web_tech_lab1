@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оформление заказа</title>
+    <link href="styles.css" rel="stylesheet">
+    <link href="modal.css" rel="stylesheet">
+    <!-- Скрипты (те же + checkout.js) -->
+    <script type="module" src="scripts/data.js" defer></script>
+    <script type="module" src="scripts/checkout.js" defer></script>
+    <script type="module" src="scripts/deliveryTime.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Нам-Ням</h1>
+        <nav>
+            <a href="../1 Лаба/lab1.html">О нас</a>
+            <a href="laba2.html">Собрать ланч</a>
+            <a>Заказы</a>
+            <a href="#contact_info">Контакты</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1>Оформление заказа</h1>
+
+        <!-- Раздел 1: Состав заказа -->
+        <section class="checkout-section">
+            <h2>1. Состав заказа</h2>
+            <div id="checkout-list" class="dishes-grid">
+                <!-- Сюда JS загрузит карточки -->
+                <p>Загрузка...</p>
+            </div>
+            <div id="empty-message" class="hidden">
+                <p>Ничего не выбрано. <a href="laba8.html">Собрать ланч</a></p>
+            </div>
+        </section>
+
+        <!-- Раздел 2: Форма (скопирована с прошлой лабы) -->
+        <section class="checkout-section">
+            <h2>2. Данные получателя</h2>
+            <form id="order-form" method="POST">
+                
+                <!-- Левая часть (Ваш заказ - теперь просто список текстом) -->
+                <div class="checkout-form-grid">
+                    <div class="column">
+                        <h3>Итоговый состав</h3>
+                        <!-- Скрытые инпуты для ID блюд -->
+                        <input type="hidden" name="soup_id" id="soup_id">
+                        <input type="hidden" name="main_course_id" id="dish_id">
+                        <input type="hidden" name="salad_id" id="salad_id">
+                        <input type="hidden" name="drink_id" id="drink_id">
+                        <input type="hidden" name="dessert_id" id="dessert_id">
+
+                        <ul class="order-summary-list">
+                            <li>Суп: <span id="summary-soup">Не выбрано</span></li>
+                            <li>Главное: <span id="summary-dish">Не выбрано</span></li>
+                            <li>Салат: <span id="summary-salad">Не выбрано</span></li>
+                            <li>Напиток: <span id="summary-drink">Не выбрано</span></li>
+                            <li>Десерт: <span id="summary-dessert">Не выбрано</span></li>
+                        </ul>
+                        <p class="total-label">Итого: <span id="form-total-price">0</span> ₽</p>
+                        
+                        <div class="form-group">
+                            <label for="comment">Комментарии</label>
+                            <textarea name="comment" id="comment"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Правая часть (Данные) -->
+                    <div class="column">
+                        <div class="form-group">
+                            <label>Имя</label>
+                            <input type="text" name="full_name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Телефон</label>
+                            <input type="tel" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Адрес</label>
+                            <input type="text" name="delivery_address" required>
+                        </div>
+                        
+                        <div class="form-group">
+                             <label>Доставка:</label>
+                             <div class="radio-group">
+                                 <label><input type="radio" name="delivery_type" value="now" required checked> Как можно скорее</label>
+                                 <label><input type="radio" name="delivery_type" value="time"> К времени</label>
+                             </div>
+                        </div>
+                         <div class="form-group">
+                            <label for="time_val">Время</label>
+                            <input type="time" name="delivery_time" id="time_val" min="07:00" max="23:00" step="300">
+                        </div>
+                        
+                        <div class="buttons">
+                             <button type="submit">Оформить</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

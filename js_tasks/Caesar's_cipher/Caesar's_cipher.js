@@ -77,6 +77,4 @@ function isUpperCase(str) {
   return str === str.toUpperCase();
 }
    
-
-// эзтыхз фзъзъз
 // расшифрованное слово хакуна матата

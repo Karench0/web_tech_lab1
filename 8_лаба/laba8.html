@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Собрать ланч</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Momo+Trust+Display&display=swap" rel="stylesheet"> 
+    <link href="styles.css" rel="stylesheet">
+    <link href="modal.css" rel="stylesheet">
+    <!-- <script type="module" src="scripts/data.js" defer></script>
+    <script type="module" src="scripts/render.js" defer></script>
+    <script type="module" src="scripts/order.js" defer></script>
+    <script type="module" src="scripts/deliveryTime.js" defer></script> -->
+    <script type="module" src="scripts/main.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Нам-Ням</h1>
+        <nav>
+            <a href="../1 Лаба/lab1.html">О нас</a>
+            <a href="../2 Лаба/laba2.html">Собрать ланч</a>
+            <a>Заказы</a>
+            <a href="#contact_info">Контакты</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="combo-selection">
+            <h2>Выберите ваш ланч</h2>
+            <div class="combo-options">
+                <label class="combo-option">
+                    <input type="radio" name="combo_type" value="combo1" checked>
+                    <span class="combo-desc">Суп + Главное + Салат + Напиток</span>
+                </label>
+                <label class="combo-option">
+                    <input type="radio" name="combo_type" value="combo2">
+                    <span class="combo-desc">Суп + Главное + Напиток</span>
+                </label>
+                <label class="combo-option">
+                    <input type="radio" name="combo_type" value="combo3">
+                    <span class="combo-desc">Суп + Салат + Напиток</span>
+                </label>
+                <label class="combo-option">
+                    <input type="radio" name="combo_type" value="combo4">
+                    <span class="combo-desc">Главное + Салат + Напиток</span>
+                </label>
+                <label class="combo-option">
+                    <input type="radio" name="combo_type" value="combo5">
+                    <span class="combo-desc">Главное + Напиток</span>
+                </label>
+            </div>
+        </section>  
+
+        <section id="section-soup">
+            <h2>Супы</h2>
+            <div class="filters">
+                <button class="filter-btn" data-category="soup" data-kind="fish">Рыбные</button>
+                <button class="filter-btn" data-category="soup" data-kind="meat">Мясные</button>
+                <button class="filter-btn" data-category="soup" data-kind="veg">Вегетарианские</button>
+            </div>
+            <div class="dishes-grid" id ="soup_block"></div>
+        </section>
+
+        <section id="section-dish">
+            <h2>Главные блюда</h2>
+             <div class="filters">
+                <button class="filter-btn" data-category="dish" data-kind="fish">Рыбные</button>
+                <button class="filter-btn" data-category="dish" data-kind="meat">Мясные</button>
+                <button class="filter-btn" data-category="dish" data-kind="veg">Вегетарианские</button>
+            </div>
+            <div class="dishes-grid" id = "dish_block"></div>
+        </section>
+
+        <section id="section-salad">
+            <h2>Салаты</h2>
+            <div class="filters">
+                <button class="filter-btn" data-category="salad" data-kind="fish">Рыбные</button>
+                <button class="filter-btn" data-category="salad" data-kind="meat">Мясные</button>
+                <button class="filter-btn" data-category="salad" data-kind="veg">Вегетарианские</button>
+            </div>
+            <div class="dishes-grid" id = "salad_block"></div>
+        </section>
+
+        <section id="section-drink">
+            <h2>Напитки</h2>
+            <div class="filters">
+                <button class="filter-btn" data-category="drink" data-kind="cold">Холодные</button>
+                <button class="filter-btn" data-category="drink" data-kind="hot">Горячие</button>
+                <button class="filter-btn" data-category="drink" data-kind="all">Все</button>
+            </div>
+            <div class="dishes-grid" id = "drink_block"></div>
+        </section>
+
+        <section>
+            <h2>Десерт</h2>
+            <div class="filters">
+                <button class="filter-btn" data-category="dessert" data-kind="small">Маленькие</button>
+                <button class="filter-btn" data-category="dessert" data-kind="medium">Средние</button>
+                <button class="filter-btn" data-category="dessert" data-kind="large">Большие</button>
+            </div>
+            <div class="dishes-grid" id = "dessert_block"></div>
+        </section>
+    </main>
+    <div class="order-bar hidden" id="order-bar">
+        <div class="order-bar-content">
+            <span class="total-price-text">Итого: <span id="bar-price">0</span> ₽</span>
+            <a href="checkout.html" class="btn-checkout" id="link-checkout">Перейти к оформлению</a>
+        </div>
+    </div>
+    <footer id = "contact_info">
+        <a href="../index.html">вернуться на главную страницу</a>  
+        <p>Позвонить нам</p>
+        <a>+7 (999) 888-77-66</a>
+    </footer>
+</body>
+</html>
