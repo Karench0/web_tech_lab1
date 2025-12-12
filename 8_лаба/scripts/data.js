@@ -1,6 +1,3 @@
-// scripts/data.js
-
-// Вставь сюда свой ключ!
 export const API_KEY = 'df3ddd20-e6f4-42a6-a275-d7ac1de8a55f'; 
 export const API_URL = 'https://edu.std-900.ist.mospolytech.ru/labs/api';
 
@@ -27,9 +24,6 @@ export async function loadDishes() {
         console.error('Ошибка загрузки:', error);
     }
 }
-
-// === РАБОТА С LOCALSTORAGE ===
-// Мы храним только ID: { soup: 1, dish: 5, ... }
 
 export function getSavedOrder() {
     const saved = localStorage.getItem('lunch_order');
