@@ -31,7 +31,7 @@ export function setupDeliveryTime() {
 
   deliveryTypeRadios.forEach(radio => {
     radio.addEventListener('change', function () {
-      if (this.value === 'time') {
+      if (this.value === 'by_time') {
         timeInput.disabled = false;
         timeInput.required = true;
         setMinTime();

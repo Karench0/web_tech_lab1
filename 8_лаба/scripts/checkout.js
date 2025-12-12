@@ -125,7 +125,7 @@ form.addEventListener('submit', async (e) => {
             const resData = await response.json();
             alert(`Заказ оформлен! ID заказа: ${resData.id}`); // Лучше модалку
             clearSavedOrder();
-            window.location.href = 'laba2.html'; // Редирект на главную
+            window.location.href = 'laba8.html'; // Редирект на главную
         } else {
             const errorData = await response.json();
             alert(`Ошибка: ${errorData.error}`);
